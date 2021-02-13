@@ -1,1 +1,25 @@
-
+<header>
+  <div class="header">
+    <p>日頃の思いをぼやいてみましょう</p>
+  </div>
+</header>
+<div class="main">
+  <img src="/assets/sky_line.png" class="back_image" alt="フォーム背景画像">
+  <div class="form_new">
+    <%= form_with(model: Post.new, class: "form_class", local: true) do |form| %>
+      <div class="new_post">
+        <%= form.text_area :content, id: "form_content", placeholder: "なんてぼやく？" %>
+        <%= form.submit "ぼやく" %>
+      </div>
+    <% end %>
+    <div class="separator">
+      <img src="/assets/sea_line_1.png" alt="区切り線">
+    </div>
+  </div>
+  <div class="separator">
+    <img src="/assets/sea_line_1.png" alt="区切り線">
+  </div>
+  <div class="posts_index">
+    
+  </div>
+</div>
