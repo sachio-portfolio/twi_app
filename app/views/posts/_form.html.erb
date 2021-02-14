@@ -16,7 +16,7 @@
     <%= notice %>
   </div>
   <div class="form_new">
-    <%= form_with(model: @post, class: "form_class", local: true) do |form| %>
+    <%= form_with(model: @post, class: "form_class", local: true, url: choose_index_or_edit) do |form| %>
       <div class="new_post">
         <%= form.text_area :content, id: "form_content", placeholder: "なんてぼやく？"  %>
         <%= form.submit "投稿", id: "post_button" %>

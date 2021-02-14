@@ -1,16 +1,20 @@
 class PostsController < ApplicationController
   before_action :select_post, only: [:edit, :update, :destroy]
-  before_action :set_all_post, only: [:index, :create]
+  before_action :set_all_post, only: [:index, :create, :confirm]
   def index
     @post = Post.new
   end
   def create
     @post = Post.new(post_params)
-    if @post.save
-      redirect_to posts_path,
-      notice: "あなたのぼやきを投稿しました！"
-    else
+    if params[:back]
       render :index
+    else
+      if @post.save
+        redirect_to posts_path,
+        notice: "あなたのぼやきを投稿しました！"
+      else
+        render :index
+      end
     end
   end
   def edit
@@ -27,6 +31,10 @@ class PostsController < ApplicationController
     @post.destroy
     redirect_to posts_path,
     notice: "あなたのぼやきをサメに食べさせました！"
+  end
+  def confirm
+    @post = Post.new(post_params)
+    render :index if @post.invalid?
   end
   private
   def post_params
