@@ -10,7 +10,7 @@
       </tr>
       <tr>
         <td><%= link_to "編集", edit_post_path(post.id) %></td>
-        <td><%= link_to "削除", "#" %></td>
+        <td><%= link_to "削除", post_path(post.id), method: :delete, data: {confirm: 'このぼやき、サメに食べさせちゃいますよ？'} %></td>
       </tr>
       <tr>
         <td colspan="2"><img src="/assets/sea_line_2" id="sea_line_2" alt="区切り線2"></td>

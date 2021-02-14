@@ -1,9 +1,7 @@
 class PostsController < ApplicationController
-  before_action :select_post, only: [:edit, :update]
+  before_action :select_post, only: [:edit, :update, :destroy]
   def index
     @posts = Post.all.order(created_at: :desc)
-  end
-  def new
     @post = Post.new
   end
   def create
@@ -12,7 +10,7 @@ class PostsController < ApplicationController
       redirect_to posts_path,
       notice: "あなたのぼやきを投稿しました！"
     else
-      render :new
+      render :index
     end
   end
   def edit
@@ -24,6 +22,11 @@ class PostsController < ApplicationController
     else
       render :edit
     end
+  end
+  def destroy
+    @post.destroy
+    redirect_to posts_path,
+    notice: "あなたのぼやきをサメに食べさせました！"
   end
   private
   def post_params
