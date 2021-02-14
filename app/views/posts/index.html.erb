@@ -9,7 +9,7 @@
     <%= notice %>
   </div>
   <div class="form_new">
-    <%= form_with(model: Post.new, class: "form_class", local: true) do |form| %>
+    <%= form_with(model: @post, class: "form_class", local: true) do |form| %>
       <div class="new_post">
         <%= form.text_area :content, id: "form_content", placeholder: "なんてぼやく？" %>
         <%= form.submit "投稿" %>
@@ -32,7 +32,7 @@
           <td><%= post.content %></td>
         </tr>
         <tr>
-          <td><%= link_to "編集", "#" %></td>
+          <td><%= link_to "編集", edit_post_path(post.id) %></td>
           <td><%= link_to "削除", "#" %></td>
         </tr>
         <tr>
