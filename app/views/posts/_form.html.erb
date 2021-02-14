@@ -1,0 +1,17 @@
+<div class="main">
+  <img src="/assets/sky_line.png" class="back_image" alt="フォーム背景画像">
+  <div class="save_message">
+    <%= notice %>
+  </div>
+  <div class="form_new">
+    <%= form_with(model: @post, class: "form_class", local: true) do |form| %>
+      <div class="new_post">
+        <%= form.text_area :content, id: "form_content", placeholder: "なんてぼやく？"  %>
+        <%= form.submit "投稿" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="separator">
+  <img src="/assets/sea_line_1.png" alt="区切り線">
+</div>

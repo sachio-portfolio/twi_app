@@ -13,20 +13,32 @@ header {
   padding: 5px 0 5px 20px;
 }
 .back_image {
-  height: 450px;
+  height: 300px;
   width: 900px;
   display: block;
   position: absolute;
 }
 .save_message {
-  position: relative; top: 160px; left: 200px;
+  position: relative; top: 65px; left: 200px;
   font-size: 18px;
+  font-weight: bold;
+  font-style: oblique;
+}
+.ask_message p {
+  background-color: #0F99D0;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: oblique;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 0;
 }
 .form_new {
-  height: 450px;
+  height: 370px;
+
 }
 .form_class {
-  position: relative; top: 180px;
+  position: relative; top: 90px;
 }
 .new_post {
   height: 250px;
@@ -82,4 +94,21 @@ table {
   height: 10px;
   width: 490px;
   padding: 0;
+}
+.after_space {
+  height: 200px;
+  padding-top: 20px;
+  background-color: #0E8ED5;
+}
+.back_link {
+  height: 30px;
+  width: 150px;
+  margin: auto;
+  text-align: center;
+  color: #3A5B9A;
+  border: none;
+  border-radius: 3px;
+  font-size: 18px;
+  box-shadow: 3px 3px 3px 3px #3A5B9A;
+  background-color: #FFFFFF;
 }
