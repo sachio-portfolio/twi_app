@@ -5,11 +5,14 @@
 </header>
 <div class="main">
   <img src="/assets/sky_line.png" class="back_image" alt="フォーム背景画像">
+  <div class="save_message">
+    <%= notice %>
+  </div>
   <div class="form_new">
     <%= form_with(model: Post.new, class: "form_class", local: true) do |form| %>
       <div class="new_post">
         <%= form.text_area :content, id: "form_content", placeholder: "なんてぼやく？" %>
-        <%= form.submit "ぼやく" %>
+        <%= form.submit "投稿" %>
       </div>
     <% end %>
     <div class="separator">
@@ -20,6 +23,23 @@
     <img src="/assets/sea_line_1.png" alt="区切り線">
   </div>
   <div class="posts_index">
-    
+    <div class="post_one_by_one">
+      <h1>みんなの投稿</h1>
+      <table>
+      <% @posts.each do |post| %>
+        <tr>
+          <td><img src="/assets/icon_fish.png" id="icon_fish" alt="魚アイコン"></td>
+          <td><%= post.content %></td>
+        </tr>
+        <tr>
+          <td><%= link_to "編集", "#" %></td>
+          <td><%= link_to "削除", "#" %></td>
+        </tr>
+        <tr>
+          <td colspan="2"><img src="/assets/sea_line_2" id="sea_line_2" alt="区切り線2"></td>
+        </tr>
+      <% end %>
+      </table>
+    </div>
   </div>
 </div>
