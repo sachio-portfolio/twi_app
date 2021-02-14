@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :select_post, only: [:edit, :update, :destroy]
+  before_action :set_all_post, only: [:index, :create]
   def index
-    @posts = Post.all.order(created_at: :desc)
     @post = Post.new
   end
   def create
@@ -34,5 +34,8 @@ class PostsController < ApplicationController
   end
   def select_post
     @post = Post.find(params[:id])
+  end
+  def set_all_post
+    @posts = Post.all.order(created_at: :desc)
   end
 end

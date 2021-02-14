@@ -1,4 +1,16 @@
 <div class="main">
+  <div class="error_message">
+    <% if @post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= @post.errors.count %>件のエラーがあります。</h2>
+        <ul>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
   <img src="/assets/sky_line.png" class="back_image" alt="フォーム背景画像">
   <div class="save_message">
     <%= notice %>
@@ -7,7 +19,7 @@
     <%= form_with(model: @post, class: "form_class", local: true) do |form| %>
       <div class="new_post">
         <%= form.text_area :content, id: "form_content", placeholder: "なんてぼやく？"  %>
-        <%= form.submit "投稿" %>
+        <%= form.submit "投稿", id: "post_button" %>
       </div>
     <% end %>
   </div>

@@ -1,5 +1,6 @@
 html {
   font-size: 62.5%;
+  color: #243A61;
   height: 100%;
 }
 body {
@@ -24,6 +25,9 @@ header {
   font-weight: bold;
   font-style: oblique;
 }
+#error_explanation {
+  position: relative; top: 0px;
+}
 .ask_message p {
   background-color: #0F99D0;
   font-size: 18px;
@@ -34,8 +38,7 @@ header {
   margin: 0;
 }
 .form_new {
-  height: 370px;
-
+  height: 350px;
 }
 .form_class {
   position: relative; top: 90px;
@@ -44,6 +47,7 @@ header {
   height: 250px;
   width: 500px;
   font-weight: bold;
+  color: #243A61;
   background: #FFFFFF;
   border-radius: 10px;
   box-shadow: 7px 7px 7px 7px #A5DEE4;
@@ -55,9 +59,21 @@ header {
   width: 380px;
   border: none;
   font-size: 18px;
-  margin-top: 15px;
-  margin-left: 100px;
-  margin-bottom: 15px;
+  margin-top: 35px;
+  margin-left: 25px;
+}
+::placeholder {
+  padding: 5px 5px;
+}
+#post_button {
+  padding: 2px 10px;
+  color: #FFFFFF;
+  border: solid 1px;
+  border-color: #243A61;;
+  border-radius: 2px;
+  box-shadow: 2px 2px 2px 2px #A5DEE4;
+  background-color: #243A61;
+  position: absolute; top: 210px; left: 620px;
 }
 .separator {
   height: 45px;
@@ -76,7 +92,7 @@ header {
 }
 h1 {
   margin-top: 0;
-  margin-left: 200px
+  margin-left: 200px;
 }
 table {
   width: 500px;
@@ -85,6 +101,7 @@ table {
   margin: 0 auto;
   display: block;
   font-size: 18px;
+  color: #243A61;
 }
 #icon_fish {
   height: 80px;
