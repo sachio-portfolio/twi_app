@@ -2,18 +2,19 @@
 <div class="posts_index">
   <div class="post_one_by_one">
     <h1>みんなの投稿</h1>
-    <table>
+    <table cellpadding="5" >
     <% @posts.each do |post| %>
       <tr>
-        <td><img src="/assets/icon_fish.png" id="icon_fish" alt="魚アイコン"></td>
-        <td><%= post.content %></td>
+        <td rowspan="2" ><img src="/assets/icon_fish.png" id="icon_fish" alt="魚アイコン"></td>
+        <td colspan="3" ><%= post.content %></td>
       </tr>
       <tr>
+        <td><%= post.updated_at %></td>
         <td><%= link_to "編集", edit_post_path(post.id) %></td>
         <td><%= link_to "削除", post_path(post.id), method: :delete, data: {confirm: 'このぼやき、サメに食べさせちゃいますよ？'} %></td>
       </tr>
       <tr>
-        <td colspan="2"><img src="/assets/sea_line_2" id="sea_line_2" alt="区切り線2"></td>
+        <td colspan="4"><img src="/assets/sea_line_2" id="sea_line_2" alt="区切り線2"></td>
       </tr>
     <% end %>
     </table>
