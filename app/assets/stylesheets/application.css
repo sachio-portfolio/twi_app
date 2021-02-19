@@ -76,13 +76,22 @@ header {
   background-color: #243A61;
   position: absolute; top: 210px; left: 620px;
 }
+#post_button:hover {
+  position: absolute; top: 208px; left: 618px;
+}
+#shark_icon {
+  /* height: 130px; */
+  width: 180px;
+  position: relative; left:  50px;
+}
 .separator {
   height: 45px;
 }
 .separator img {
   height: 45px;
   width: 900px;
-  position: static;
+  position: relative;
+  z-index: 1;
 }
 .posts_index {
   padding-top: 10px;
@@ -90,6 +99,7 @@ header {
 }
 .post_one_by_one {
   position: relative;
+  padding-bottom: 30px;
 }
 h1 {
   margin-top: 0;
@@ -105,8 +115,20 @@ table {
   color: #243A61;
 }
 #icon_fish {
-  height: 70px;
   width: 70px;
+}
+.change_button {
+  height: 20px;
+  width: 35px;
+  padding: 0 5px;
+  text-align: center;
+  color: #3A5B9A;
+  border: none;
+  border-radius: 2px;
+  font-size: 14px;
+  box-shadow: 1px 1px 1px 1px #3A5B9A;
+  background-color: #FFFFFF;
+  position: relative; top: 3px; right: 10px; bottom: 3px;
 }
 #sea_line_2 {
   height: 10px;
@@ -114,7 +136,7 @@ table {
   padding: 0;
 }
 .after_space {
-  height: 200px;
+  height: 350px;
   padding-top: 20px;
   background-color: #0E8ED5;
 }
@@ -141,4 +163,20 @@ table {
   border-radius: 10px;
   box-shadow: 7px 7px 7px 7px #A5DEE4;
   padding: 10px;
+}
+footer {
+  background-color: #243A61;
+  color: #ffffff;
+  padding: 5px 0 5px 20px;
+}
+a {
+  text-decoration:none;
+  color: #3A5B9A;
+}
+a:hover {
+  color: #0E8ED5;
+}
+.sub_body {
+  height: 100%;
+  width: 900px;
 }

@@ -5,16 +5,17 @@
     <table cellpadding="5" >
     <% @posts.each do |post| %>
       <tr>
-        <td rowspan="2" ><img src="/assets/icon_fish.png" id="icon_fish" alt="魚アイコン"></td>
-        <td colspan="3" ><%= post.content %></td>
+        <td rowspan="2" ><%= image_tag "/assets/fish#{random_num}.png", id: "icon_fish", alt: "魚アイコン" %></td>
+        <td colspan="4" ><%= post.content %></td>
       </tr>
       <tr>
-        <td><%= post.updated_at %></td>
-        <td><%= link_to "編集", edit_post_path(post.id) %></td>
-        <td><%= link_to "削除", post_path(post.id), method: :delete, data: {confirm: 'このぼやき、サメに食べさせちゃいますよ？'} %></td>
+        <td><%= post.updated_at.strftime("%Y-%m-%d %H:%M") %></td>
+        <td><div class="change_button"><%= link_to "編集", edit_post_path(post.id) %></div></td>
+        <td> </td>
+        <td><div class="change_button"><%= link_to "削除", post_path(post.id), method: :delete, data: {confirm: 'このぼやき、サメに食べさせちゃいますよ？'} %></div></td>
       </tr>
       <tr>
-        <td colspan="4"><img src="/assets/sea_line_2" id="sea_line_2" alt="区切り線2"></td>
+        <td colspan="5"><img src="/assets/sea_line_2" id="sea_line_2" alt="区切り線2"></td>
       </tr>
     <% end %>
     </table>

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include PostsHelper
   before_action :select_post, only: [:edit, :update, :destroy]
   before_action :set_all_post, only: [:index, :create, :confirm]
   def index
