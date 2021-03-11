@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    models:
+      post: ぼやき
+    attributes:
+      post:
+        content: ぼやき
